@@ -1,11 +1,4 @@
-import {
-  randCatchPhrase,
-  randJobTitle,
-  randSkill,
-  randSuperhero,
-  randVerb,
-  incrementalNumber,
-} from '@ngneat/falso';
+import { randCatchPhrase, randVerb } from '@ngneat/falso';
 import shuffle from 'lodash.shuffle';
 import {
   belongsTo,
@@ -15,18 +8,15 @@ import {
   Model,
   RestSerializer,
 } from 'miragejs';
+import data from './data.json';
 import { statuses } from '../lib/statuses';
-
-const id = incrementalNumber();
 
 const ApplicationSerializer = RestSerializer.extend({});
 
-const heroes = randSuperhero({ length: 10 }).map((hero) => {
+const heroes = data.users.map((hero) => {
   return {
-    ...hero,
-    id: id(),
-    skill: randSkill(),
-    title: randJobTitle(),
+    realName: hero.realName,
+    alterEgo: hero.alterEgo,
   };
 });
 
@@ -43,15 +33,12 @@ export function makeServer({ environment = 'development' }) {
 
     serializers: {
       application: ApplicationSerializer.extend(),
-      user: ApplicationSerializer.extend({
-        embed: true,
-      }),
-      tasks: ApplicationSerializer.extend({
-        embed: true,
-        include: ['user', 'column'],
+      user: ApplicationSerializer.extend({}),
+      task: ApplicationSerializer.extend({
+        include: ['user'],
       }),
       column: ApplicationSerializer.extend({
-        embed: true,
+        include: ['tasks'],
       }),
     },
 

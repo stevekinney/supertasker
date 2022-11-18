@@ -45,6 +45,10 @@ input.destructive {
   @apply border-red-900 bg-red-700 text-white hover:bg-red-600 active:bg-red-500;
 }
 
+.button-group {
+  @apply flex flex-row-reverse gap-2;
+}
+
 input[type='checkbox'],
 input[type='radio'] {
   @apply hover:accent-primary-700;
@@ -93,16 +97,20 @@ select {
 }
 
 .application {
-  @apply mx-auto my-10 flex max-w-4xl place-content-around gap-4;
+  @apply mx-auto my-10 flex place-content-center gap-4 p-4;
 }
 
-.create {
-  @apply flex flex-col gap-16;
+.side-panel {
+  @apply flex flex-col gap-16 sm:w-1/4;
 }
 
 .create-task,
 .create-user {
   @apply flex flex-col gap-4;
+}
+
+.task-list {
+  @apply sm:w-3/4;
 }
 
 .task-list,
@@ -112,7 +120,7 @@ select {
 
 .task,
 .user {
-  @apply flex flex-col gap-2 border border-primary-500 p-4 drop-shadow-md;
+  @apply flex flex-col gap-2 border border-primary-500 bg-white p-4 drop-shadow-md;
 }
 
 .task-header,
@@ -130,5 +138,5 @@ select {
 }
 
 .task-status {
-  @apply rounded-lg bg-primary-200 px-2;
+  @apply whitespace-nowrap rounded-lg bg-primary-200 px-2 text-center text-xs shadow-sm;
 }

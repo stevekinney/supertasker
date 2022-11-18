@@ -1,23 +1,15 @@
+import { ComponentPropsWithoutRef, useId } from 'react';
 import { statuses } from '../lib/statuses';
 
-const id = ({ id }: { id: string }) => `task-${id}-status-select`;
+const StatusSelect = (props: ComponentPropsWithoutRef<'select'>) => {
+  const id = useId();
 
-type StatusSelectProps = {
-  task: Task;
-};
-
-const StatusSelect = ({ task }: StatusSelectProps) => {
   return (
     <div>
-      <label className="hidden" htmlFor={id(task)}>
+      <label className="hidden" htmlFor={props.id || id}>
         Status
       </label>
-      <select
-        id={id(task)}
-        className="status-select"
-        value={task.columnId}
-        onChange={() => {}}
-      >
+      <select id={props.id || id} className="status-select" {...props}>
         <option></option>
         {statuses.map((status) => (
           <option key={status} value={status}>

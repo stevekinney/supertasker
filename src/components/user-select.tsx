@@ -1,23 +1,15 @@
-const id = ({ id }: { id: string }) => `task-${id}-user-select`;
+import { ComponentPropsWithoutRef, useId } from 'react';
 
-type UserSelectProps = {
-  task: Task;
-};
-
-const UserSelect = ({ task }: UserSelectProps) => {
+const UserSelect = (props: ComponentPropsWithoutRef<'select'>) => {
+  const id = useId();
   const users: User[] = [];
 
   return (
     <div>
-      <label className="hidden" htmlFor={id(task)}>
+      <label className="hidden" htmlFor={props.id || id}>
         User
       </label>
-      <select
-        id={id(task)}
-        className="user-select"
-        value={task.userId}
-        onChange={() => {}}
-      >
+      <select id={props.id || id} className="user-select" {...props}>
         <option></option>
         {users.map((user) => (
           <option key={user.id} value={user.id}>

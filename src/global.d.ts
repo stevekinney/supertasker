@@ -1,23 +1,20 @@
 type Task = {
   id: string;
   title: string;
-  userId: User[id];
-  columnId: StatusColumn['id'];
+  user?: User[id];
+  column?: StatusColumn['id'];
 };
 
 type User = {
   id: string;
   realName: string;
   alterEgo: string;
-  company: string;
-  skill: string;
-  title: string;
-  taskIds: Task['id'][];
+  tasks: Task['id'][];
 };
 
 type StatusColumn = {
   id: string;
-  taskIds: Task['id'][];
+  tasks: Task['id'][];
   title: Status;
 };
 

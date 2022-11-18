@@ -19,7 +19,13 @@ const Task = ({ task }: TaskProps) => {
       </header>
       <div className="task-details">
         <p className="task-status">{status}</p>
-        {user && <p className="task-user">{user.alterEgo}</p>}
+        <p className="task-user">
+          {user ? (
+            user.alterEgo
+          ) : (
+            <span className="italic text-primary-700">No one assigned.</span>
+          )}
+        </p>
       </div>
     </article>
   );

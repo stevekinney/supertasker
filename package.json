@@ -9,17 +9,19 @@
     "lodash.shuffle": "^4.2.0",
     "lodash.uniqueid": "^4.0.1",
     "miragejs": "^0.1.46",
+    "nanoid": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-scripts": "^5.0.1",
-    "uuid": "^9.0.0"
+    "uuid": "^9.0.0",
+    "vitest": "^0.25.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "vitest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -41,10 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.4.3",
-    "@types/jest": "^29.2.2",
+    "@types/jest": "^29.2.3",
     "@types/lodash.shuffle": "^4.2.7",
     "@types/lodash.uniqueid": "^4.0.7",
     "@types/node": "^18.11.9",
