@@ -11,5 +11,25 @@
     "**/.vscode": true,
     ".vscode": true
   },
-  "explorerExclude.backup": {}
+  "explorerExclude.backup": {},
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#723aac",
+    "activityBar.background": "#723aac",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#bf7e40",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#723aac",
+    "statusBar.background": "#592d86",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#723aac",
+    "statusBarItem.remoteBackground": "#592d86",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#592d86",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#592d8699",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#592d86"
 }
