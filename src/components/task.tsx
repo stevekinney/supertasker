@@ -8,8 +8,8 @@ type TaskProps = {
 const Task = ({ task }: TaskProps) => {
   const { columns, users } = useContext(ApplicationContext);
 
-  const status = columns.find((column) => column.id === task.columnId)?.title;
-  const user = users.find((user) => user.id === task.userId);
+  const status = columns.find((column) => column.id === task.column)?.title;
+  const user = users.find((user) => user.id === task.user);
 
   return (
     <article className="task">
