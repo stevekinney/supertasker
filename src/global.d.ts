@@ -1,8 +1,8 @@
 type Task = {
   id: string;
   title: string;
-  user?: User;
-  status: Status;
+  userId: User[id];
+  columnId: StatusColumn['id'];
 };
 
 type User = {
@@ -12,6 +12,13 @@ type User = {
   company: string;
   skill: string;
   title: string;
+  taskIds: Task['id'][];
+};
+
+type StatusColumn = {
+  id: string;
+  taskIds: Task['id'][];
+  title: Status;
 };
 
 type Status =

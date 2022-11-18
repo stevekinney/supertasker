@@ -4,6 +4,8 @@ import Application from './components/application';
 
 import { makeServer } from './api';
 
+import ApplicationContext from './context';
+import data from './api/data.json';
 import './index.css';
 
 const environment = process.env.NODE_ENV;
@@ -15,6 +17,8 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <Application />
+    <ApplicationContext.Provider value={data}>
+      <Application />
+    </ApplicationContext.Provider>
   </React.StrictMode>,
 );

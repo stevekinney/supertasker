@@ -95,6 +95,7 @@ export function makeServer({ environment = 'development' }) {
         task.update({ user, column });
       });
 
+      console.log(heroes.map(({ alterEgo }) => alterEgo));
       console.log(server.db.dump());
     },
   });

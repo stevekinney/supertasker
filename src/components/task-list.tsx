@@ -1,10 +1,10 @@
+import { useContext } from 'react';
+import ApplicationContext from '../context';
 import Task from './task';
 
-type TaskListProps = {
-  tasks: Task[];
-};
+const TaskList = () => {
+  const { tasks } = useContext(ApplicationContext);
 
-const TaskList = ({ tasks }: TaskListProps) => {
   return (
     <section className="task-list">
       {tasks.map((task) => (
