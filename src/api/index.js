@@ -94,9 +94,6 @@ export function makeServer({ environment = 'development' }) {
         const column = getRandom(columns);
         task.update({ user, column });
       });
-
-      console.log(heroes.map(({ alterEgo }) => alterEgo));
-      console.log(server.db.dump());
     },
   });
 }
